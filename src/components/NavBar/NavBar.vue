@@ -6,7 +6,7 @@
           <img
             class="icon"
             :src="
-              require(`@/assets/img/navbar/${item.icon + (active === index ? '_active' : '')}.png`)
+              require(`@/assets/img/navbar/${item.icon + (active === index ? '-active' : '')}.png`)
             "
             alt="icon"
           />
@@ -27,23 +27,23 @@ export default {
     return {
       menus: [
         {
-          label: this.$t('navbar.home'),
-          icon: 'icon_home',
+          label: this.$t('home'),
+          icon: 'home',
           path: '/home'
         },
         {
-          label: this.$t('navbar.shop'),
-          icon: 'icon_shop',
+          label: this.$t('energy'),
+          icon: 'energy',
           path: '/shop'
         },
         {
-          label: this.$t('navbar.record'),
-          icon: 'icon_record',
+          label: this.$t('share'),
+          icon: 'share',
           path: '/record'
         },
         {
-          label: this.$t('navbar.my'),
-          icon: 'icon_user',
+          label: this.$t('my'),
+          icon: 'my',
           path: '/my'
         }
       ]

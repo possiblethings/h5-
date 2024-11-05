@@ -36,6 +36,8 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (to.path !== '/login') {
     const token = sessionCache.getItem('token');
+    console.log(token,'token');
+    
     if (!token) {
       next({ path: '/login' });
     }

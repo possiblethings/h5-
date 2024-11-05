@@ -6,13 +6,4 @@ export function fetchLogin(data) {
     data,
     showLoading: true
   });
-  // return new Promise((resolve) => {
-  //   setTimeout(() => {
-  //     resolve({
-  //       code: 200,
-  //       data: '123123',
-  //       msg: 'success'
-  //     });
-  //   }, 1000);
-  // });
 }

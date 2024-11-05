@@ -8,7 +8,6 @@
 
 <script>
 import FallBack from '@/components/FallBack';
-
 export default {
   components: { FallBack }
 };

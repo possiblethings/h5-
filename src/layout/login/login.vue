@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="submit-operation">
-          <div class="submit-btn">登录</div>
+          <div class="submit-btn" @click="login">登录</div>
           <div class="register-link" @click="pageTab='register'">现在注册</div>
         </div>
       </template>
@@ -61,7 +61,7 @@
           </div>
         </div>
         <div class="submit-operation">
-          <div class="submit-btn">现在注册</div>
+          <div class="submit-btn" >现在注册</div>
           <div class="register-link" @click="pageTab='login'">也有账号</div>
         </div>
       </template>
@@ -88,7 +88,8 @@
         </div>
         <div class="submit-operation">
           <div class="submit-btn">确定</div>
-          <div class="register-link" @click="pageTab='login'">登录</div>
+          <!-- <div class="register-link" @click="pageTab='login'">登录</div> -->
+          <div class="register-link" @click="login">登录</div>
         </div>
       </template>
     </div>
@@ -96,9 +97,16 @@
 </template>
 
 <script>
-import { Form , Field ,Checkbox } from 'vant';
+import { Form , Field ,Checkbox,Toast  } from 'vant';
+import { fetchLogin } from '@/service/user';
+import { localCache,sessionCache } from '@/utils/storage';
 export default {
   name: 'Login',
+  components:{
+    Form,
+    Field,
+    Checkbox
+  },
   data(){
     return{
       pageTab:'login',
@@ -125,10 +133,24 @@ export default {
       }
     }
   },
-  components:{
-    Form,
-    Field,
-    Checkbox
+  methods:{
+    async login(){
+      let params = {
+        password:this.lgoinPerson.password,
+        phone:this.lgoinPerson.phone,
+        token:this.lgoinPerson.token,
+      }
+      let res = await fetchLogin(params)
+      if(res.status_code == 400){
+        Toast(`${res.message}`)
+
+      }else if(res.status_code == 200){
+        Toast(`${res.message}`)
+        sessionCache.setItem('token',res.data.token);
+        this.$router.push('/home');
+      }
+      console.log(res,'res')
+    }
   }
 };
 </script>
