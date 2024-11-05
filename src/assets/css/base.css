@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+ul,
+ol,
+li,
+em,
+i {
+  margin: 0px;
+  padding: 0px;
+  /* 文字抗锯齿 */
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+* {
+  box-sizing: border-box;
+}
+p {
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+table,
+tr,
+th,
+td {
+  border-collapse: collapse;
+}
+
+html,
+body,
+#app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body * {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* 滚动条 */
+/* ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #3b86f7;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.3);
+} */

@@ -1,0 +1,43 @@
+.phone-number-mask {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.phone-number-dialog {
+  width: 80%;
+  height: 80%;
+  background: #2e2e2e;
+  border-radius: 6px;
+  overflow-y: auto;
+  .item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    .info {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      width: 28px;
+      .country {
+        width: 28px;
+      }
+      .label {
+        margin-left: 16px;
+        color: #fff;
+        font-size: 16px;
+      }
+    }
+    .code {
+      font-size: 16px;
+      color: #c2c2c2;
+    }
+  }
+  .active {
+    background: #3f484f;
+  }
+}
